@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EnovateMe</title>
+    <link rel="stylesheet" href="Home.css" />
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="menu">
+            <h3 class="logo">Enovate<span>Me</span></h3>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="main">
+            <header>
+                <div class="overlay">
+                    <div class="inner">
+                        <h2 class="title">Future is here</h2>
+                        <p>
+                            We are here for your growth we will help you to grow your skills in all ways with our learning material workshops and webinars.
+                        </p>
+                        <button class="btn" onclick="abc()">Get In</button>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="shadow one"></div>
+        <div class="shadow two"></div>
+    </div>
+
+    <div class="links">
+        <ul>
+            <li>
+                <a href="#" style="--i: 0.05s;">Home</a>
+            </li>
+            <li>
+                <a href="ELearn.html" style="--i: 0.1s;">E-Learning</a>
+            </li>
+            <li>
+                <a href="Webinars.html" style="--i: 0.15s;">Workshop</a>
+            </li>
+            <li>
+                <a href="E-Workshop.html" style="--i: 0.2s;">Webinars</a>
+            </li>
+            <li>
+                <a href="About_Us.html" style="--i: 0.25s;">About Us</a>
+            </li>
+            <li>
+                <a href="#" style="--i: 0.3s; " onclick="logout12()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-app.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+<script type="text/javascript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyBymk33wVuby4GGQk_Jm0DdhjZKl9VDEKo",
+        authDomain: "enoavte.firebaseapp.com",
+        projectId: "enoavte",
+        databaseURL: "https://enoavte-default-rtdb.firebaseio.com/",
+        storageBucket: "enoavte.appspot.com",
+        messagingSenderId: "239659712187",
+        appId: "1:239659712187:web:8eca6b7dcad2c55dfa339e",
+        measurementId: "G-1HKN6DQLFE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    function logout12(){
+        firebase.auth().signOut().then(() => {
+            // Sign-out successful.
+            sessionStorage.setItem("NAME", "yash");
+            window.location="index.html";
+            alert("Log-in Again To Learn And Grow With Us")
+        }).catch((error) => {
+            // An error happened.
+        });
+    }
+
+</script>
+<script type="text/javascript">
+    const hamburger_menu = document.querySelector(".hamburger-menu");
+    const container = document.querySelector(".container");
+    const btu=document.querySelector(".btn");
+
+    hamburger_menu.addEventListener("click", () => {
+        container.classList.toggle("active");
+    });
+
+        function abc(){
+            window.location='ELearn.html';
+        }
+
+
+</script>
+<script src="functions.js"></script>
+<script src="login.js"></script>
+
+
+</body>
+</html>

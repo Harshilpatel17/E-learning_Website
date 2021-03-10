@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Meta Tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="agency, business, corporate, creative, freelancer, interior, minimal, modern, multipurpose, personal, portfolio, responsive, simple" />
+
+    <!--PAGE TITLE-->
+    <title id="tittle">Workshops</title>
+
+    <link rel="icon" type="image/ico" href="images/favicon.ico" />
+
+    <!--Plugins Css-->
+    <link rel="stylesheet" href="css/plugins.css">
+    <!--Main Style Css-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Modernizr Js-->
+    <script src="js/modernizr.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122650090-5"></script>
+
+
+</head>
+<body class="smooth-scroll">
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<script type="text/javascript">
+    var firebaseConfig = {
+        apiKey: "AIzaSyBymk33wVuby4GGQk_Jm0DdhjZKl9VDEKo",
+        authDomain: "enoavte.firebaseapp.com",
+        databaseURL: "https://enoavte-default-rtdb.firebaseio.com",
+        projectId: "enoavte",
+        storageBucket: "enoavte.appspot.com",
+        messagingSenderId: "239659712187",
+        appId: "1:239659712187:web:8eca6b7dcad2c55dfa339e",
+        measurementId: "G-1HKN6DQLFE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var starCountRef = firebase.database().ref('Workshop/Android Development');
+    starCountRef.on('value', (snapshot) => {
+        var name=snapshot.val().Name;
+        var des=snapshot.val().Description;
+        tittle=document.getElementById('tittle');
+        tittle.innerHTML=name;
+        des1=document.getElementById('des');
+        des1.innerHTML=des;
+        name1=document.getElementById('name');
+        name1.innerHTML=name;
+    });
+</script>
+<!--PRELOADER START-->
+<div class="preloader">
+    <div class="loader-wrap">
+        <div class="loader">
+            <div class="loader-percent"></div>
+        </div>
+        <div id="percent">0%</div>
+    </div>
+</div>
+<!--PRELOADER END-->
+
+<!--MAIN START-->
+<div id="main">
+
+    <div class="ct-main-content ct-index">
+
+        <!--HEADER START-->
+        <header>
+            <div class="logo-container">
+                <a href="index.html" id="logo" class="cursor-link" data-type="page-transition">
+                    <div class="item-cat">Workshops</div>
+                </a>
+            </div>
+
+            <div class="menu-burger">
+                <div class="parallax-wrap burger-wrap">
+                    <div class="parallax-icon">
+                        <div class="burger-box">
+                            <div class="burger-inner"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="burger-text">
+                    <div class="text-menu">Details</div>
+                    <div class="text-open">OPEN</div>
+                    <div class="text-close">CLOSE</div>
+                </div>
+            </div>
+
+        </header>
+        <!--HEADER END-->
+
+        <!--MENU OVERLAY START-->
+        <div id="menu-overlay">
+            <div class="container">
+                <div class="content-wrapper">
+                    <nav class="primary-nav">
+                        <ul>
+                            <li><a href="index.html" class="menu-link cursor-link" data-type="page-transition">Index</a></li>
+                            <li><a href="about.html" class="menu-link cursor-link" data-type="page-transition">About</a></li>
+                            <li><a href="contact.html" class="menu-link cursor-link" data-type="page-transition">Contact</a></li>
+
+                        </ul>
+                    </nav>
+                    <div class="company-info">
+                        <a href="#" class="info-email link-underline cursor-link">enovateeliteclub1907@gmail.com</a><br>
+                        <a href="#" class="info-tel link-underline cursor-link">+91-7990584385</a>
+                        <div class="info-address">
+                            <p>Get in touch with us using our social media handles.</p>
+                        </div>
+                        <ul class="sm-links">
+                            <li><a href="#" class="cursor-link"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#" class="cursor-link"><i class="fab fa-facebook"></i></a></li>
+                            <li><a href="#" class="cursor-link"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="cursor-link"><i class="fab fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MENU OVERLAY END-->
+
+        <div id="scroll-content">
+        </div>
+
+        <!--PAGE CONTENT START-->
+        <div class="page-content">
+
+            <!--PIXI SLIDER START-->
+            <div id="pixi-slider">
+
+                <div class="slider-wrapper">
+                    <!--SLIDER ITEM-->
+
+                    <div class="slider-item">
+                        <div class="slide-image">
+                            <img src="images/projects/project1/1.png" class="slide-item__image" alt="Project Image">
+                        </div>
+
+                        <div class="slide-content">
+                            <div class="slide-content-inner">
+                                <div class="item-cat" id="des">Different kids of studies on business models and strategies.
+                                </div>
+                                <h2 id="name" class="item-title" data-splitting >Case Studies</h2>
+                                <a href="project01.html" data-type="page-transition" class="item-link link-underline cursor-link">Get In</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--PIXI SLIDER NAVIGATION START-->
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <!--PIXI SLIDER NAVIGATION END-->
+
+                    <div id="canvas-container"></div>
+
+                </div>
+                <!--PIXI SLIDER END-->
+
+            </div>
+            <!--PAGE CONTENT END-->
+
+        </div>
+    </div>
+    <!--MAIN END-->
+
+    <!--AJAX PRELOADER START-->
+    <div class="ajax-preloader">
+        <div class="loading"></div>
+    </div>
+    <!--AJAX PRELOADER END-->
+
+    <!--CUSTOM CURSOR START-->
+    <div id="custom-cursor">
+        <div id="cursor-outer">
+            <div id="cursor-loading"></div>
+        </div>
+
+        <div id="cursor-inner"></div>
+    </div>
+    <!--CUSTOM CURSOR END-->
+
+    <!--Jquery JS-->
+    <script src="js/jquery.min.js"></script>
+    <!--Plugins JS-->
+    <script src="js/plugins.min.js"></script>
+    <!--Google Map Api-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUU5FZiF5WLFFfgIC1n64Zr0zfpQZjBBg"></script>
+    <!--Site Main JS-->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

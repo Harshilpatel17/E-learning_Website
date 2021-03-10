@@ -1,0 +1,282 @@
+<!DOCTPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website landing page design &animation with slider using HTML, CSS & JS | Website UI Design</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        body{
+            overflow-x:hidden;
+            font-family: Poppins, 'sans-serif';
+        }
+        .swiper-container {
+            width: 100%;
+            height: 100vh;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 552px;
+            height: 100px;
+            background-color: #e3f6f5;
+            z-index: 99;
+        }
+        header .logo{
+            float: left;
+            margin: 25px 0 0 70px;
+        }
+        header .menu{
+            float: right;
+            margin: 35px 50px 0 0;
+        }
+        header ul li{
+            display: inline-block;
+            margin: 0 15px;
+        }
+        header ul li a{
+            color: #2c698d;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .slide-left{
+            float: left;
+            background-color: #fff;
+            position: relative;
+            margin-top: 100px;
+            width: 640px;
+            height: 100%;
+            padding: 100px;
+            z-index: 99;
+        }
+        .slide-left h6{
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .slide-left h1{
+            font-size: 50px;
+            font-weight: 700;
+            color: #272643;
+        }
+        .slide-left p{
+            font-size: 16px;
+            line-height: 28px;
+        }
+        .slide-left a{
+            position: relative;
+            display: inline-block;
+            margin-top: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #272643;
+            text-decoration: none;
+        }
+        .slide-left a::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #272643;
+            bottom: 0;
+        }
+        .slide-right{
+            float: left;
+            margin-left: -88px;
+            width: calc(100% - 640px);
+        }
+        .swiper-button-prev::after,
+        .swiper-button-next::after{
+            display: none;
+        }
+        .swiper-button-prev,
+        .swiper-button-next{
+            top: inherit;
+            bottom: 28px;
+        }
+        .swiper-button-prev{
+            left: 476px;
+        }
+        .swiper-button-next{
+            left: 576px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <header>
+        <div class="logo">
+            <img src="https://i.postimg.cc/mg4rWBmv/logo.png" alt="">
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="slider-wrap">
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="slide-left">
+                        <h6 class="element">01</h6>
+                        <h1 class="element">Wooden Stool</h1>
+                        <p class="element">A stool is one of the earliest forms of seat furniture.
+                            It bears many similarities to a chair. It consists of a single seat, for one person,
+                            without back or armrests (in early stools), on a base of a stool there are either one ,two,
+                            three or four legs. A stool is generally distinguished from chairs by their lack of arms and a back.</p>
+                        <a class="element" href="#">Read more</a>
+                    </div>
+                    <div class="slide-right">
+                        <img src="https://i.postimg.cc/d3mgrGHW/wooden-stool.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-left">
+                        <h6 class="element">02</h6>
+                        <h1 class="element">Round chair</h1>
+                        <p class="element">A stool is one of the earliest forms of seat furniture.
+                            It bears many similarities to a chair. It consists of a single seat, for one person,
+                            without back or armrests (in early stools), on a base of a stool there are either one ,two,
+                            three or four legs. A stool is generally distinguished from chairs by their lack of arms and a back.</p>
+                        <a class="element" href="#">Read more</a>
+                    </div>
+                    <div class="slide-right">
+                        <img src="https://i.postimg.cc/3RCZBhpB/round-chair.jpg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slide-left">
+                        <h6 class="element">03</h6>
+                        <h1 class="element">White lamp</h1>
+                        <p class="element">A stool is one of the earliest forms of seat furniture.
+                            It bears many similarities to a chair. It consists of a single seat, for one person,
+                            without back or armrests (in early stools), on a base of a stool there are either one ,two,
+                            three or four legs. A stool is generally distinguished from chairs by their lack of arms and a back.</p>
+                        <a class="element" href="#">Read more</a>
+                    </div>
+                    <div class="slide-right">
+                        <img src="https://i.postimg.cc/286SrxHj/white-lamp.jpg" alt="">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"><img src="https://i.postimg.cc/VkD13PF7/left1.png" alt=""></div>
+            <div class="swiper-button-next"><img src="https://i.postimg.cc/4xhTyHv9/right1.png" alt=""></div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+
+            loop: true,
+            effect: 'fade',
+            speed: 1500,
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+
+        })
+
+        mySwiper.on('slideChangeTransitionStart', function() {
+            anime({
+                targets: '.swiper-slide-active .slide-right img',
+                scaleX: [1.2, 1],
+                opacity: [0, 1],
+                easing: 'easeInOutQuart'
+            });
+
+            anime({
+                targets: '.swiper-slide-active .slide-left .element',
+                translateY: [50, 0],
+                opacity: [0, 1],
+                delay: anime.stagger(150,{start: 500}),
+                easing: 'easeInOutQuart'
+            });
+        });
+
+        anime({
+            targets: 'header',
+            scaleX: [0, 1],
+            translateX: [-400, 0],
+            opacity: [0, 1],
+            easing: 'easeInOutQuart'
+        });
+        anime({
+            targets: '.logo img',
+            rotate: 360,
+            opacity: [0, 1],
+            delay: 500,
+            easing: 'easeInOutQuart'
+        });
+        anime({
+            targets: '.menu li',
+            translateY: [50, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(200,{start: 700}),
+            easing: 'easeInOutQuart'
+        });
+        anime({
+            targets: '.slide-right img',
+            scale: [1.2, 1],
+            opacity: [0, 1],
+            delay: anime.stagger(200,{start: 2000, from: 'last'}),
+            easing: 'easeInOutQuart'
+        });
+        anime({
+            targets: '.swiper-slide-active .slide-left .element',
+            translateY: [50, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(250,{start: 1700}),
+            easing: 'easeInOutQuart'
+        });
+
+        anime({
+            targets: '.swiper-button-prev',
+            translateX: [-100, 0],
+            opacity: [0, 1],
+            delay: 3000,
+            easing: 'easeInOutQuart'
+        });
+        anime({
+            targets: '.swiper-button-next',
+            translateX: [100, 0],
+            opacity: [0, 1],
+            delay: 3000,
+            easing: 'easeInOutQuart'
+        });
+
+    });
+</script>
+</body>
+</html>

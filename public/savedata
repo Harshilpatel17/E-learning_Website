@@ -1,0 +1,14 @@
+function saveData()
+    {
+        firebase.database().ref('users').push({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value
+        },(error)=>{
+            if(error){
+                alert(error);
+            }
+            else {
+                alert('success')
+            }
+        });
+    }

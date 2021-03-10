@@ -1,0 +1,190 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA_Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Books</title>
+    <!--page-icon------------>
+    <link rel="shortcut icon" href="images/logo.png">
+    <!--stylesheet------------->
+    <link rel="stylesheet" type="text/css" href="books.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--light-slider.css------------->
+    <!--Jquery-------------------->
+
+    <!--Jquery-------------------->
+    <script type="text/javascript" src="js/Jquery.js"></script>
+    <!--lightslider.js--------------->
+
+    <!--lightslider.js--------------->
+</head>
+<body>
+<div class="logo-container">
+    <a href="index.html" id="logo" class="cursor-link" style="text-decoration:none;margin-top: 20px;font-family:Calibri;margin-left: 20px;font-size: 25px" data-type="page-transition">
+        <h1 style="font-family: Calibri" class="item-cat ">Lets Read</h1>
+    </a>
+</div>
+<script>
+    const ALGOLIA_ID = functions.config().algolia.app_id;
+    const ALGOLIA_ADMIN_KEY = functions.config().algolia.api_key;
+    const ALGOLIA_SEARCH_KEY = functions.config().algolia.search_key;
+    alert(ALGOLIA_ID.value);
+    var algoliaConfig =  {
+        "applicationID": "7WMDXUJAHG",
+        "searchAPIKey": "22f1d67ab28ad4c30efb5d1b0d13dad9",
+        "monitoringAPIKey": "4231ff7e4923781136394be5b778bdf8",
+        "apiKey": "ea8c9e31e53bb0aaaab713fec73389c5"
+    };
+    
+    const ALGOLIA_INDEX_NAME = 'notes';
+    const client = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_KEY);
+
+</script>
+<script>
+    const searchBox = document.querySelector(".search-box");
+    const searchBtn = document.querySelector(".search-icon");
+    const cancelBtn = document.querySelector(".cancel-icon");
+    const searchInput = document.querySelector("input");
+    const searchData = document.querySelector(".search-data");
+    searchBtn.onclick =()=>{
+        searchBox.classList.add("active");
+        searchBtn.classList.add("active");
+        searchInput.classList.add("active");
+        cancelBtn.classList.add("active");
+        searchInput.focus();
+        if(searchInput.value != ""){
+            var values = searchInput.value;
+            searchData.classList.remove("active");
+            searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'>" + values + "</span>";
+        }else{
+            searchData.textContent = "";
+        }
+    }
+    cancelBtn.onclick =()=>{
+        searchBox.classList.remove("active");
+        searchBtn.classList.remove("active");
+        searchInput.classList.remove("active");
+        cancelBtn.classList.remove("active");
+        searchData.classList.toggle("active");
+        searchInput.value = "";
+    }
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+
+<script type="text/javascript">
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyBymk33wVuby4GGQk_Jm0DdhjZKl9VDEKo",
+        authDomain: "enoavte.firebaseapp.com",
+        databaseURL: "https://enoavte-default-rtdb.firebaseio.com",
+        projectId: "enoavte",
+        storageBucket: "enoavte.appspot.com",
+        messagingSenderId: "239659712187",
+        appId: "1:239659712187:web:8eca6b7dcad2c55dfa339e",
+        measurementId: "G-1HKN6DQLFE"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    var ul=document.getElementById('autoWidth');
+    firebase.database().ref('Book').once('value',function (snapshot){
+        snapshot.forEach(
+            function (childSnapshot){
+                let name=childSnapshot.val().Genre;
+                let Type=childSnapshot.val().Type;
+                let pic=childSnapshot.val().Pic;
+                let link=childSnapshot.val().Link;
+
+
+                var ul=document.getElementById('autoWidth');
+                var ul=document.getElementById('autoWidth');
+
+                var cl=document.createElement('li');
+                cl.setAttribute('class','item-a');
+                var d=document.createElement('div');
+                d.setAttribute('class','box');
+                var d1=document.createElement('div');
+                d1.setAttribute('class','slide-img');
+                var i1=document.createElement('img');
+
+                var d2=document.createElement('div');
+                d2.setAttribute('class','overlay');
+
+                var d3=document.createElement('div');
+                d3.setAttribute('class','detail-box');
+
+                var Name=document.createElement('h1');
+                var n=document.getElementById('name');
+                var a=document.createElement('a');
+                a.setAttribute('class','type')
+                var type=document.createElement('h1');
+                a.innerHTML=name;
+                cl.innerHTML="<li class=\"item-a\" style='list-style: none'>\n " +
+                    "<!--box-slider--------------->\n" +
+                    "\t<div class=\"box\">\n" +
+                    "\t<!--img-box---------->\n" +
+                    "\t<div class=\"slide-img\">\n" +
+                    "\t<img alt=\"1\" src="+pic+">\n" +
+                    "\t<!--overlayer---------->\n" +
+                    "\t<div class=\"overlay\">\n" +
+                    "\t<!--buy-btn------>\t\n" +
+                    "\t<a id=\"btn\" href="+link+" class=\"buy-btn\" >Read Now</a>\t\n" +
+
+                    "\t</div>\n" +
+                    "\t</div>\n" +
+                    "\t<!--detail-box--------->\n" +
+                    "\t<div class=\"detail-box\">\n" +
+                    "\t<!--type-------->\n" +
+                    "\t<div class=\"type\">\n" +
+                    "\t<p style='text-decoration: none'>"+name+"</p>\n" +
+                    "\t<span>"+Type+"</span>\n" +
+                    "\t</div>\n" +
+                    "\t<!--price-------->\n" +
+                    "\t<a href=\"#\" class=\"price\"></a>\n" +
+                    "\t\t\n" +
+                    "\t</div>\n" +
+                    "\t\n" +
+                    "\t</div>\t\t\n" +
+                    "</li>"
+                type.innerHTML=Type;
+
+                //cl.addEventListener('click',function (){
+                   // window.location="PDF.html";
+                  //  localStorage.setItem('link',link);
+                //});
+                ul.appendChild(cl);
+            }
+
+        )
+
+    })
+    function read1(){
+        var link2=document.getElementById("link1")
+        localStorage.setItem("textvalue",link);
+        alert(link);
+    }
+</script>
+<section class="slider">
+    <ul id="abc" >
+        <ul id="autoWidth" class="container" style="display: flex;position: relative;max-width: 100%; grid-column: auto ;list-style: none; grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-rows: minmax(100px,auto);
+    margin: 40px;
+    grid-auto-flow:  dense;" >
+            <!--1------------------------------------>
+
+
+        </ul>
+    </ul>
+
+</section>
+
+
+
+<!--script-link----------->
+</body>
+</html>
